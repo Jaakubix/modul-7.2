@@ -5,6 +5,14 @@ class tel:
         self.firma = firma
         self.stanowisko = stanowisko
         self.mail = mail
+class BaseContact(tel):
+    def __init__(self, nrpryw, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.nrpryw = nrpryw
+class BusinessContact(tel):
+    def __init__(self, nrsluz, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.nrsluz = nrsluz
 os1 = tel(imie="Janusz", nazwisko="Ozdoba", firma="Filker", stanowisko="kierownik", mail="ozdoba@gmail.com", nrpryw="781698732", nrsluz="884512368")
 os2 = tel(imie="Agata", nazwisko="Prawik", firma="Gustewo", stanowisko="sekretarka", mail="agata1997@wp.pl", nrpryw="981654792", nrsluz="946138729")
 os3 = tel(imie="Tadeusz", nazwisko="Kowalski", firma="Gasper", stanowisko="brygadzista", mail="najlepszybrygadzista@o2.pl", nrpryw="781369584", nrsluz="784293571")
