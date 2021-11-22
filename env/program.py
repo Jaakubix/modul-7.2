@@ -30,3 +30,13 @@ class BusinessContact(tel):
 
 os1 = BaseContact(imie="Janusz", nazwisko="Ozdoba", mail="ozdoba@gmail.com", nrpryw="781698732") #dane testowe
 os1_biz = BusinessContact(imie="Janusz", nazwisko="Ozdoba", mail="ozdoba@gmail.com", firma="Filker", stanowisko="kierownik", nrsluz="884512368") #dane testowe
+def create_contacts():
+    n = input("Podaj liczbe generowanych danych: ")
+    for _ in range(n):
+        tel.imie = fake_data.first_name()
+        tel.nazwisko = fake_data.last_name()
+        tel.mail = fake_data.safe_email()
+        BaseContact.nrpryw = fake_data.phone_number()
+        BusinessContact.firma = fake_data.company()
+        BusinessContact.stanowisko = fake_data.job()
+        BusinessContact.nrsluz = fake_data.phone_number()
