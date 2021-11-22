@@ -28,11 +28,10 @@ class BusinessContact(tel):
     def contact(self):
         print(f"Wybieram numer +48{self.nrsluz} i dzwonię do {self.imie} {self.nazwisko}")
 
-os1 = BaseContact(imie="Janusz", nazwisko="Ozdoba", mail="ozdoba@gmail.com", nrpryw="781698732") #dane testowe
-os1_biz = BusinessContact(imie="Janusz", nazwisko="Ozdoba", mail="ozdoba@gmail.com", firma="Filker", stanowisko="kierownik", nrsluz="884512368") #dane testowe
 def create_contacts():
-    n = input("Podaj liczbe generowanych danych: ")
-    for _ in range(n):
+    n = int(input("Podaj liczbe generowanych danych: "))
+    i=0
+    while i<n:
         tel.imie = fake_data.first_name()
         tel.nazwisko = fake_data.last_name()
         tel.mail = fake_data.safe_email()
@@ -40,3 +39,5 @@ def create_contacts():
         BusinessContact.firma = fake_data.company()
         BusinessContact.stanowisko = fake_data.job()
         BusinessContact.nrsluz = fake_data.phone_number()
+        i = i+1
+create_contacts()
