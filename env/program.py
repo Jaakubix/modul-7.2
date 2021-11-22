@@ -11,7 +11,7 @@ class tel:
         def label_length(self):
             return self.length
         @label_length.setter
-        def label_length(self)
+        def label_length(self):
             self.length = len(imie) + len(nazwisko)
 class BaseContact(tel):
     def __init__(self, nrpryw, imie, nazwisko, mail):
